@@ -1,3 +1,1 @@
-## anilech.github.io
-
-[go here](https://anilech.github.io)
+## [anilech.github.io](https://anilech.github.io)
