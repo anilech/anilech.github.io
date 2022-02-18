@@ -1,4 +1,5 @@
 theme: minima
+show_excerpts: true
 minima:
   skin: dark
   date_format: "%d.%m.%Y"
