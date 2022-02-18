@@ -1,7 +1,5 @@
 ---
 layout: home
-list_title: ''
+list_title: 'welcome to my blog'
 title: ''
 ---
-
-### welcome to my blog
