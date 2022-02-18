@@ -3,6 +3,7 @@ layout: post
 title: "expdp query with both single and double quotes"
 date: 2019-03-07
 category: oracle
+tags: datapump expdp
 ---
 
 ![kdpv]({{ "/assets/linz_donau.jpg" | relative_url }})
