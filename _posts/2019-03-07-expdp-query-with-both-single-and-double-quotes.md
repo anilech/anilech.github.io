@@ -4,6 +4,7 @@ title: "expdp query with both single and double quotes"
 date: 2019-03-07
 category: oracle
 tags: datapump expdp
+excerpt_separator: <!--more-->
 ---
 
 ![kdpv]({{ "/assets/linz_donau.jpg" | relative_url }})
@@ -34,3 +35,4 @@ QUERY='"lowercase_table":where "lowercase_date_column" <= DATE''2019-01-01'''
 The whole QUERY clause is surrounded by single quotes, the table name and the column name are surrounded by double quotes, and finally the DATE literal is surrounded by double single quotes. This way it works correctly.
 
 Hope it helps!
+<!--more-->
