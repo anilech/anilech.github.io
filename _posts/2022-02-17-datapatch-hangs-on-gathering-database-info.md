@@ -28,7 +28,7 @@ The problem is that the datapatch uses Windows internal "type" command to create
 my $WindowsDoneCmd = "\nhost type nul > ";
 ```
 
-It turns out that on the server there was another "type.exe" file from UnxUtils in the PATH. So the datapatch has used it instead of command processor's internal "type".
+It turns out that on the server there was another "type.exe" file from [UnxUtils](http://unxutils.sourceforge.net/) in the PATH. So the datapatch has used it instead of command processor's internal "type".
 
 That's why things went wrong: the datapatch couldn't create the file and wait indefinitely on the following line (sub exec_DB_script):
 
