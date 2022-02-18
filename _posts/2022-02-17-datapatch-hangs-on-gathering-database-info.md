@@ -2,8 +2,7 @@
 layout: post
 title: Datapatch hangs on "Gathering database info..."
 date: 2022-02-17
-category: oracle
-tags: datapatch type
+tags: oracle datapatch type
 excerpt_separator: <!--more-->
 ---
 
