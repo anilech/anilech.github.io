@@ -1,4 +1,4 @@
-theme: minima
+theme: jekyll-theme-hacker
 show_excerpts: true
 minima:
   skin: dark
