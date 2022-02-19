@@ -1,8 +1,10 @@
 plugins:
   - jekyll-remote-theme
 remote_theme: jekyll/minima
+show_excerpts: true
 minima:
   skin: dark
+  date_format: "%d.%m.%Y"
 #theme: minima
 #show_excerpts: true
 #minima:
