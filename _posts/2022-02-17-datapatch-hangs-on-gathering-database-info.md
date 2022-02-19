@@ -46,6 +46,7 @@ Hope it helps!
 
 1. To debug datapatch you can use the -debug switch, but it doesn't help much. Setting the environment variable "CATCON_DEBUG" to "true" enables debug mode in the catcon.pm and it is much more helpful.
 2. You can use [`where`](https://ss64.com/nt/where.html) command to find files in the PATH:
+
 ```
 C:\>where type
 c:\Program Files\bin\type.exe
