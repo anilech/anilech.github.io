@@ -1,0 +1,30 @@
+---
+layout: post
+title: "ORA-13516 on applying Oracle 19 PSU"
+date: 2023-01-19
+tags: oracle datapatch
+excerpt_separator: <!--more-->
+---
+
+![kdpv]({{ "/assets/hiwu.jpg" | relative_url }})
+
+Hit the ORA-13516 error during datapatch during latest (19.18 JAN23) PSU installation.
+
+datapatch throws this:
+```
+Patch 34765931 apply: WITH ERRORS
+  logfile: /oracle/cfgtoollogs/sqlpatch/34765931/25078403/34765931_apply_SID_2023Jan18_14_20_33.log (errors)
+  -> Error at line 9395: script rdbms/admin/backport_files/bug_33527739_apply.sql
+      - ORA-13516: AWR Operation failed: CATPROC not valid
+      - ORA-06512: at "SYS.DBMS_WORKLOAD_REPOSITORY", line 328
+      - ORA-06512: at "SYS.DBMS_WORKLOAD_REPOSITORY", line 355
+      - ORA-06512: at line 12
+```
+
+Usually you patch the ORACLE_HOME then start your DB in upgrade mode, execute `datapatch -verbose` to patch DB dictionary, and finally restart DB in open mode.
+Not anymore. Since 19.12 (JUL21) both DB and OJVM patches don't require upgrade mode.
+
+After restarting DB in open mode, the datapatch has sucseeded.
+
+Looks like it makes sense to check PSU's readme from time to time ...
+<!--more-->
