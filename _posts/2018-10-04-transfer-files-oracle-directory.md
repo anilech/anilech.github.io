@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to transfer files to or from oracle direcory"
+title: "How to transfer files to or from oracle directory"
 date: 2018-10-04
 tags: oracle directory
 excerpt_separator: <!--more-->
@@ -21,7 +21,7 @@ It is influenced by [this perl script](https://stackoverflow.com/questions/29431
 You may need to fix Oracle dll path on the "[Reflection.Assembly]::LoadFile" line.
 
 #### II. sqlcl+javascript (download only): sqlcl_ora_dir_download.js
-The [sqlcl](https://www.oracle.com/database/technologies/appdev/sqlcl.html) is the new fat sqlplus written in java, therefore it supports a bunch of platforms.
+The [sqlcl](https://www.oracle.com/database/technologies/appdev/sqlcl.html) is the Oracle's sqlplus written in java, therefore it supports a bunch of platforms.
 It also runs javascript natively, so it is possible to create quite powerfull scripts.
 The [sqlcl_ora_dir_download.js](https://github.com/anilech/oracle_directory_transfer/) script works in a download-mode only,
 but it doesn't require the UTL_FILE's grant.
