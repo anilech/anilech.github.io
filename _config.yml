@@ -4,5 +4,5 @@ plugins:
 remote_theme: jekyll/minima
 show_excerpts: true
 minima:
-  skin: dark
+  skin: auto
   date_format: "%d.%m.%Y"
