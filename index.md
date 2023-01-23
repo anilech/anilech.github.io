@@ -1,6 +1,6 @@
 ---
 layout: home
 list_title: 'another oracle dba blog'
-title: 'anilech'
+title: ''
 ---
 <!--v.2-->
