@@ -8,6 +8,6 @@ excerpt_separator: <!--more-->
 
 ![kdpv]({{ "/assets/flachau.jpg" | relative_url }})
 
-[HERE](alias-base) 
+[HERE](https://github.com/anilech/alias-base) 
 
 <!--more-->
