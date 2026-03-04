@@ -9,8 +9,8 @@ excerpt_separator: <!--more-->
 ![kdpv]({{ "/assets/bully_1200x400.jpg" | relative_url }})
 
 Oracle silently backports many 26ai features to the 19c release. There is an
-[interesting article](https://oracle-base.com/blog/2025/08/01/you-dont-have-to-wait-for-23ai-for-these-features/)
-from Tim Hall about this. Recently I found another very usefull feature that is not covered by it.
+[interesting Tim Hall's article](https://oracle-base.com/blog/2025/08/01/you-dont-have-to-wait-for-23ai-for-these-features/)
+about this. Recently I found another very usefull feature that is not covered by it.
 
 Usually you need to put a SSL certificate of the WWW-site into an Oracle Wallet when you perform a HTTPS request with the UTL_HTTP Package.
 Otherwise you hit "ORA-29024: Certificate validation failure". In the Oracle 26ai you finally have the possibility to offload certificate check to the OS by providing 'system:' wallet.
@@ -76,4 +76,5 @@ Hope it helps!
 More links on the topic:
 * [blogs.oracle.com](https://blogs.oracle.com/developers/using-the-operating-systems-certificate-store-instead-of-an-oracle-wallet-in-oracle-database-23c)
 * [youtube skillbuilders](https://www.youtube.com/watch?v=q2iNuMxSWVo)
+* [UTL_HTTP.SET_WALLET 19c](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/UTL_HTTP.html#GUID-D4063487-6F69-4757-B77A-AF2B93E5DAFE)
 
