@@ -18,7 +18,7 @@ Tim [reports](https://oracle-base.com/articles/23/transport-layer-security-tls-c
 
 In the 19c on the other hand you need to extract an SSL Certificate from the site into the Wallet to execute the connection. Well, not anymore.
 Looks like the 'system:' wallet has been backported to 19c, so the life will be a little bit easier for us mere DBAs.
-<!--more-->
+
 For example, on the base release 19.3 it is not working:
 ```
 SQL> select BANNER_FULL from v$version;
@@ -70,3 +70,4 @@ Hope it helps!
 More links on the topic:
 * [blogs.oracle.com](https://blogs.oracle.com/developers/using-the-operating-systems-certificate-store-instead-of-an-oracle-wallet-in-oracle-database-23c)
 * [youtube skillbuilders](https://www.youtube.com/watch?v=q2iNuMxSWVo)
+<!--more-->
