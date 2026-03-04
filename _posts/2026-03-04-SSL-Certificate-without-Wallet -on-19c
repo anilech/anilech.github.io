@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Using OS Certificate Store instead of Oracle Wallet in the Oracle 19c"
+date: 2026-03-04
+tags: utl_http wallet oracle ORA-29024 certificate SSL
+excerpt_separator: <!--more-->
+---
+
+![kdpv]({{ "/assets/bully_1200x400.jpg" | relative_url }})
+
+Oracle silently backports many 26ai features to the 19c release. There is an
+[interesting article](https://oracle-base.com/blog/2025/08/01/you-dont-have-to-wait-for-23ai-for-these-features/)
+from Tim Hall about this. Recently I found another very usefull feature that is not covered by it.
+
+Usually you need to put a SSL certificate of the WWW-site into an Oracle Wallet when you perform a HTTPS request with the UTL_HTTP Package.
+Otherwise you hit "ORA-29024: Certificate validation failure". In the Oracle 26ai you finally have the possibility to offload certificate check to the OS by providing 'system:' wallet.
+Tim [reports](https://oracle-base.com/articles/23/transport-layer-security-tls-connections-without-a-client-wallet-23) that it is even a default setting, so it should work right out of the box.
+
+In the 19c on the other hand you need to extract an SSL Certificate from the site into the Wallet to execute the connection. Well, not anymore.
+Looks like the 'system:' wallet has been backported to 19c, so the life will be a little bit easier for us mere DBAs
+
+<!--more-->
