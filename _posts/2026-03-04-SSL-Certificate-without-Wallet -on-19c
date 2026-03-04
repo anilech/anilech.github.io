@@ -17,6 +17,58 @@ Otherwise you hit "ORA-29024: Certificate validation failure". In the Oracle 26a
 Tim [reports](https://oracle-base.com/articles/23/transport-layer-security-tls-connections-without-a-client-wallet-23) that it is even a default setting, so it should work right out of the box.
 
 In the 19c on the other hand you need to extract an SSL Certificate from the site into the Wallet to execute the connection. Well, not anymore.
-Looks like the 'system:' wallet has been backported to 19c, so the life will be a little bit easier for us mere DBAs
+Looks like the 'system:' wallet has been backported to 19c, so the life will be a little bit easier for us mere DBAs.
 
 <!--more-->
+
+For example, on the base release 19.3 it is not working:
+```
+SQL> select BANNER_FULL from v$version;
+BANNER_FULL
+--------------------------------------------------------------------------------
+Oracle Database 19c Standard Edition 2 Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+SQL> select utl_http.request('https://www.oracle.com/') from dual;
+ERROR at line 1:
+ORA-29273: HTTP request failed
+ORA-29024: Certificate validation failure
+
+SQL> exec utl_http.set_wallet(path=>'system:');
+PL/SQL procedure successfully completed.
+
+SQL> select utl_http.request('https://www.oracle.com/') from dual;
+ERROR at line 1:
+ORA-29273: HTTP request failed
+ORA-29248: an unrecognized WRL was used to open a wallet
+```
+
+However, on the latest PSU 19.30:
+```
+SQL> select BANNER_FULL from v$version;
+BANNER_FULL
+--------------------------------------------------------------------------------
+Oracle Database 19c Standard Edition 2 Release 19.0.0.0.0 - Production
+Version 19.30.0.0.0
+
+SQL> select utl_http.request('https://www.oracle.com/') from dual;
+ERROR at line 1:
+ORA-29273: HTTP request failed
+ORA-29024: Certificate validation failure
+
+SQL> exec utl_http.set_wallet(path=>'system:');
+PL/SQL procedure successfully completed.
+
+SQL> select utl_http.request('https://www.oracle.com/') from dual;
+UTL_HTTP.REQUEST('HTTPS://WWW.ORACLE.COM/')
+--------------------------------------------------------------------------------
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+. . .
+</body>
+```
+
+Hope it helps!
+
+More links on the topic:
+* [blogs.oracle.com](https://blogs.oracle.com/developers/using-the-operating-systems-certificate-store-instead-of-an-oracle-wallet-in-oracle-database-23c)
+* [youtube skillbuilders](https://www.youtube.com/watch?v=q2iNuMxSWVo)
