@@ -67,7 +67,11 @@ UTL_HTTP.REQUEST('HTTPS://WWW.ORACLE.COM/')
 </body>
 ```
 
+I don't know when exactly the "system:" wallet arrived to 19c. I've checked on 19.27 - it works there too.
+
+
 Hope it helps!
+
 
 More links on the topic:
 * [blogs.oracle.com](https://blogs.oracle.com/developers/using-the-operating-systems-certificate-store-instead-of-an-oracle-wallet-in-oracle-database-23c)
